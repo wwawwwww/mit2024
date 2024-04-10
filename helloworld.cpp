@@ -1,20 +1,25 @@
 #include <iostream>
 
 using namespace std;
-int fib(int n){
-	if (n == 1 || n == 2){
-		if (n == 1)
-			return 0;
-		else return 1;
+void fib(int n) {
+	int fnum = 0;
+	int snum = 1;
+	cout << fnum << " " << endl << snum << endl;
+	for (int i = 2; i < n; i++){
+		cout << fnum + snum << endl;
+		int temp = fnum;
+		fnum = snum;
+		snum = temp + snum;
+
 	}
-	else return fib(n - 1) + fib(n - 2);
 }
+
 
 int main(){
 	cout << "Hello world" << endl;
 	int n;
 	cout << "Enter N of Fib num: ";
 	cin >> n;	 
-	cout << endl << fib(n) << endl;
+	fib(n);
 	return 0;
 }
